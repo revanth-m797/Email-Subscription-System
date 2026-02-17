@@ -49,11 +49,11 @@ function sendToDB() {
 
     .then(res => res.json())
     .then(data => {
-        showPopup("Saved in MySQL ✅");
+        showPopup("Saved in MySQL");
     })
     .catch(err => {
         console.error(err);
-        showPopup("Error saving data ❌");
+        showPopup("Error saving data");
     }); 
 }
 
@@ -74,4 +74,5 @@ function showPopup1(message) {
 }
 function closePopup1() {
     document.getElementById("popup1").style.display = "none";
+
 }
