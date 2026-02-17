@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import mysql.connector as mysql
 from send_email import *
@@ -12,6 +12,10 @@ CORS(app)
 def getdb():
     return mysql.connect(host=os.getenv("DB_HOST"),user=os.getenv("DB_USER"),password=os.getenv("DB_PASS"),database=os.getenv("DB_NAME"))
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+    
 @app.route("/send-veri",methods=["POST"])
 def verification():
     if request.method=="POST":
@@ -49,4 +53,5 @@ def costomers():
         return jsonify({"status":"success"})
     
 if __name__=="__main__":
+
     app.run(debug=True)
