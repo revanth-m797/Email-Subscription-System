@@ -14,7 +14,9 @@ This project allows users to subscribe using email verification with OTP authent
 
 # Install Dependencies
 
+```
 pip install -r requirements.txt
+```
 
 # Create a .env file contianing
 
@@ -45,4 +47,5 @@ Create Table customerInfo(
 ```
 python app.py
 ```
+
 
